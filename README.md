@@ -1,7 +1,5 @@
 # Frontend Mentor - Interactive card details form
 
-![Design preview for the Interactive card details form coding challenge](./design/desktop-preview.jpg)
-
 ## The challenge
 
 That's a challenge from Frontend Mentor where users should be able to:
