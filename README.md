@@ -10,7 +10,7 @@ That's a challenge from Frontend Mentor where users should be able to:
 - View the optimal layout depending on their device's screen size
 - See hover, active, and focus states for interactive elements on the page
 
-Somethings I added to it
+## Somethings I added
 - CSS clamp and relative units to handle in between breakpoints
 - A adicional breakpoint to keep the cards centralized
 - An small interaction when you hover the cards
