@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <section class="cardPreviewWrap">
+    <div class="cardPreview front">
+      <img src="./images/card-logo.svg" alt="Fake credit card logo">
+      <span class="cardPreview_number" id="cardPreview_number">0000 0000 0000 0000</span>
+      <span class="cardPreview_name" id="cardPreview_name">Jane Appleseed</span>
+      <p class="cardPreview_date" id="cardPreview_date">
+        <span id="cardPreview_dateMonth">00</span>/<span id="cardPreview_dateYear">00</span>
+      </p>
+    </div>
+    <div class="cardPreview back">
+      <span class="cardPreview_cvc" id="cardPreview_cvc">000</span>
+    </div>
+  </section>
+
+  <section class="content" id="content">
+    
+    <form onsubmit="event.preventDefault(), success()" id="form" novalidate autocomplete="off">
+    
+      <div class="inputGroup name">
+        <label for="inputCardholderName">
+          Cardholder Name
+        </label>
+        <input
+          type="text"
+          placeholder="e.g. Jane Appleseed"
+          id="inputCardholderName"
+        >
+        <span class="feedbackError" aria-live="polite">Can't be blank</span>
+      </div>
+
+      <div class="inputGroup number">
+        <label for="inputCardNumber">
+          Card Number
+        </label>
+        <input
+          type="text"
+          placeholder="e.g. 1234 5678 9123 0000"
+          id="inputCardNumber"
+          maxlength="19"
+          pattern="\d{4}\s\d{4}\s\d{4}\s\d{4}"
+        >
+        <span class="feedbackError"></span>
+      </div>
+
+      <div class="inputGroup date">
+        <label for="inputExpDateMonth">
+          Exp. Date (MM/YY)
+        </label>
+        <input
+          type="text"
+          placeholder="MM"
+          id="inputExpDateMonth"
+          minlength="2"
+          maxlength="2"
+          max="12"
+          pattern="\d{2}"
+        >
+        <input
+          type="text"
+          placeholder="YY"
+          id="inputExpDateYear"
+          minlength="2"
+          maxlength="2"
+          pattern="\d{2}"
+          min="22"
+        >
+        <span class="feedbackError">Can't be blank</span>
+      </div>
+
+      <div class="inputGroup cvc">
+        <label for="inputCVC">
+          CVC
+        </label>
+        <input
+          type="text"
+          placeholder="e.g. 123"
+          id="inputCVC"
+          minlength="3"
+          maxlength="3"
+          pattern="\d{3}"
+        >
+        <span class="feedbackError">Can't be blank</span>
+      </div>
+
+      <button id="buttonConfirm">
+        Confirm
+      </button>
+
+    </form>
+
+    <div class="formComplete" id="formComplete">
+      <img src="./images/icon-complete.svg" alt="Checked icon">
+      <h2>Thank you!</h2>
+      <p>We've added your card details</p>
+      <button>Continue</button>
+    </div>
+
+  </section>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/cueinn" target="_blank">Fellipe "cueinn"</a>.
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
